@@ -12,22 +12,22 @@ bot(
 	{
 		pattern: 'tictactoe ?(.*)',
 		fromMe: true,
-		desc: 'TicTacToe Game.',
+		desc: 'TicTacToe',
 		type: 'game',
 	},
 	async (message, match) => {
 		if (match == 'end') {
 			await delTicTacToe()
-			return await message.send('*Game ended*')
+			return await message.send('*Game Over*')
 		}
 		let [restart, id] = match.split(' ')
 		const game = isTactacToe()
 		if (game.state)
 			return await message.send(
 				await genButtonMessage(
-					[{ id: 'tictactoe end', text: 'END' }],
+					[{ id: 'tictactoe end', text: 'ENDE' }],
 					game.text,
-					'Choose Number from 1-9 to Play'
+					'Wähle eine Zahl von 1 bis 9.'
 				),
 				{ contextInfo: { mentionedJid: game.mentionedJid } },
 				'button'
@@ -45,7 +45,7 @@ bot(
 		}
 		if (!opponent || opponent == me)
 			return await message.send(
-				'*Choose an Opponent*\n*Reply to a message or mention or tictactoe jid1 jid2*'
+				'*Wähle deinen Gegner*\n*Markiere eine Nachricht oder tictactoe jid1 jid2*'
 			)
 		const { text } = await ticTacToe(message.jid, me, opponent)
 		return await message.send(text, {
