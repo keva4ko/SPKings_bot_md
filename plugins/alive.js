@@ -4,11 +4,11 @@ bot(
 	{
 		pattern: 'alive ?(.*)',
 		fromMe: true,
-		desc: 'Nachricht wenn Bot lebt',
+		desc: 'Nachricht bei Befehl',
 		type: 'misc',
 	},
 	async (message, match) => {
 		const { msg, options, type } = await aliveMessage(match, message)
-		return await message.send('⭐     _*SPKings*_     ⭐\n\nbruder was?_')
+		return await message.send('⭐   _*Black Squad the Bot*_   ⭐\n\nSetzt Nachricht bei -alive\nBeispiel: alive [Text]')
 	}
 )
