@@ -4,7 +4,7 @@ bot(
 	{
 		pattern: 'vote ?(.*)',
 		fromMe: true,
-		desc: 'poll in whatsapp',
+		desc: 'Abstimmung starten',
 		type: 'group',
 	},
 	async (message, match) => {
