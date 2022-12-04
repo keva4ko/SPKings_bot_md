@@ -8,11 +8,11 @@ bot(
 		type: 'search',
 	},
 	async (message, match) => {
-		if (!match) return await message.send('*Beispiel: weather München*')
+		if (!match) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Beispiel:\nweather München')
 		const data = await getJson(
 			`http://api.openweathermap.org/data/2.5/weather?q=${match}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
 		).catch(() => {})
-		if (!data) return await message.send(`_${match} nicht gefunden_`)
+		if (!data) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_${match} wurde nicht gefunden_`)
 		const { name, timezone, sys, main, weather, visibility, wind } = data
 		const degree = [
 			'N',
