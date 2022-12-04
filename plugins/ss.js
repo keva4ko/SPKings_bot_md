@@ -5,16 +5,16 @@ bot(
 	{
 		pattern: 'ss ?(.*)',
 		fromMe: true,
-		desc: 'Take web page screenshot',
+		desc: 'Screenshot einer Webseite',
 		type: 'download',
 	},
 	async (message, match) => {
 		if (!config.SS_TOKEN)
 			return await message.send(
-				'set SS_TOKEN:your_token from https://app.screenshotapi.net/dashboard'
+				'⭐️   _*Blvck Squad the Bot*_   ⭐️\n\nSetz deinen SS_TOKEN:dein_token aus https://app.screenshotapi.net/dashboard'
 			)
 		match = isUrl(match || message.reply_message.text)
-		if (!match) return await message.send('_Example : ss url_')
+		if (!match) return await message.send('⭐️   _*Blvck Squad the Bot*_   ⭐️\n\n_Beispiel: ss [Link]_')
 		await message.sendFromUrl(
 			`https://shot.screenshotapi.net/screenshot?token=${
 				config.SS_TOKEN
@@ -29,16 +29,16 @@ bot(
 	{
 		pattern: 'fullss ?(.*)',
 		fromMe: true,
-		desc: 'Take web page screenshot',
+		desc: 'Screenshot einer Webseite',
 		type: 'download',
 	},
 	async (message, match) => {
 		if (!config.SS_TOKEN)
 			return await message.send(
-				'set SS_TOKEN:your_token from https://app.screenshotapi.net/dashboard'
+				'⭐️   _*Blvck Squad the Bot*_   ⭐️\n\nSetz deinen SS_TOKEN:dein_token aus https://app.screenshotapi.net/dashboard'
 			)
 		match = isUrl(match || message.reply_message.text)
-		if (!match) return await message.send('_Example : fullss url_')
+		if (!match) return await message.send('⭐️   _*Blvck Squad the Bot*_   ⭐️\n\n_Beispiel: fullss [Link]_')
 		await message.sendFromUrl(
 			`https://shot.screenshotapi.net/screenshot?token=${
 				config.SS_TOKEN
