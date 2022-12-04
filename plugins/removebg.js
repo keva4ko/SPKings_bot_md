@@ -4,29 +4,29 @@ bot(
 	{
 		pattern: 'rmbg',
 		fromMe: true,
-		desc: 'TO remove backgroud of image',
+		desc: 'Entfernt Hintergrund vom Bild',
 		type: 'misc',
 	},
 	async (message, match) => {
 		if (config.RMBG_KEY == 'null')
-			return await message.send(`1. Create a account in remove.bg
-    2. Verify your account.
-    3. Copy your Key.
-    4. .setvar RMBG_KEY:copied_key
+			return await message.send(`1. Erstelle einen Konto bei remove.bg
+    2. Verifiziere dein Konto.
+    3. Kopiere deinen Key.
+    4. .setvar RMBG_KEY:kopierte_Key
     .......................
     
-    Example => .setvar RMBG_KEY:GWQ6jVy9MBpfYF9SnyG8jz8P
+    Beispiel => .setvar RMBG_KEY:GWQ6jVy9MBpfYF9SnyG8jz8P
           
-    For making this steps easy 
-    Click SIGNUP LINK and Choose Google a/c
-    after completing signup
-    Click KEY LINK and copy your KEY.(Press show BUTTON)
+    Um es einfacher zu machen 
+    Geh auf den SIGNUP LINK und wähle Google aus
+    nach der Registrierung
+    Klick KEY LINK und kopiere deinen KEY.(Press show BUTTON)
     
     SIGNUP LINK : https://accounts.kaleido.ai/users/sign_up 
     
     KEY LINK : https://www.remove.bg/dashboard#api-key`)
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('*Reply to a image*')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Markiere einen Bild.*')
 		const buffer = await removeBg(
 			await message.reply_message.downloadAndSaveMediaMessage('rmbg'),
 			config.RMBG_KEY
