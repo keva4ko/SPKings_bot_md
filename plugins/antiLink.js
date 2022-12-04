@@ -4,20 +4,20 @@ bot(
 	{
 		pattern: 'antilink ?(.*)',
 		fromMe: true,
-		desc: 'AntiLink an oder aus',
+		desc: 'Kick bei Links',
 		type: 'group',
 		onlyGroup: true,
 	},
 	async (message, match) => {
 		const antilink = await getAntiLink(message.jid)
 		if (!match) {
-			const onOrOff = antilink.enabled ? 'aus' : 'an'
+			const onOrOff = antilink.enabled ? 'off' : 'on'
 			const button = await genButtonMessage(
 				[
 					{ id: 'antilink info', text: 'INFO' },
 					{ id: `antilink ${onOrOff}`, text: onOrOff.toUpperCase() },
 				],
-				'⭐*SPKings*⭐\n\nBeispiel:\nhttps://github.com/lyfe00011/whatsapp-bot-md/wiki/antilink',
+				'⭐   _*Blvck Squad the Bot*_   ⭐\n\nKickt Mitglieder beim versenden verbotener Links.\nBeispiel:\nantilink on/off\nantilink 1,994,48\nantilink !49,!43,!41',
 				'Antilink'
 			)
 			return await message.send(button, {}, 'button')
@@ -44,28 +44,28 @@ bot(
 			// 	'template'
 			// )
 		}
-		if (match == 'an' || match == 'aus') {
-			if (match == 'aus' && !antilink)
-				return await message.send('⭐*SPKings*⭐\n\nAntiLink ist noch deaktiviert.')
-			await setAntiLink(message.jid, match == 'an')
+		if (match == 'on' || match == 'off') {
+			if (match == 'off' && !antilink)
+				return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nAntiLink ist noch deaktiviert.\nAktivere es mit antilink on.')
+			await setAntiLink(message.jid, match == 'on')
 			return await message.send(
-				`*SPKings*\n ${match == 'an' ? 'Aktiviert' : 'Deaktiviert.'}`
+				`⭐️   _*Blvck Squad the Bot*_   ⭐️\n\nAlles klar, _AntiLink_ ist ${match == 'on' ? 'aktiviert.' : 'deaktiviert.'}`
 			)
 		}
 		if (match == 'info')
 			return await message.send(
-				`*SPKings*\nAntiLink ${antilink.enabled ? 'an' : 'aus'}\n*Erlaubte Links:* ${
+				`⭐️   _*Blvck Squad the Bot*_   ⭐️\n\nAntiLink ist ${antilink.enabled ? 'an' : 'aus'}\n*Erlaubte Links:* ${
 					antilink.allowedUrls
-				}\n*Eingabe:* ${antilink.action}`
+				}\n*Modus:* ${antilink.action}`
 			)
 		if (match.startsWith('action/')) {
 			await setAntiLink(message.jid, match)
 			const action = match.replace('action/', '')
 			if (!['warn', 'kick', 'null'].includes(action))
-				return await message.send('⭐*SPKings*⭐\n\n_Ungültige Eingabe_')
-			return await message.send(`⭐*SPKings*⭐\n\n_Eingabe aktualisiert!_ ${action}`)
+				return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Deine Eingabe kann ich nicht umsetzen😓_')
+			return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Okay der nächste bekommt einen ${action}._`)
 		}
 		await setAntiLink(message.jid, match)
-		return await message.send(`⭐*SPKings*⭐\n\nErlaubte Links: ${match}`)
+		return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\nErlaubte Links: ${match}`)
 	}
 )
