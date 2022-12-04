@@ -4,7 +4,7 @@ bot(
 	{
 		pattern: 'ping ?(.*)',
 		fromMe: true,
-		desc: 'To check ping',
+		desc: 'Ping-Test Hund',
 		type: 'misc',
 	},
 	async (message, match) => {
