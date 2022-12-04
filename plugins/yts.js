@@ -13,17 +13,17 @@ bot(
 	{
 		pattern: 'yts ?(.*)',
 		fromMe: true,
-		desc: 'YT search',
+		desc: 'YT Suche',
 		type: 'search',
 	},
 	async (message, match) => {
-		if (!match) return await message.send('*Example : yts baymax*')
+		if (!match) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel:\nyts baymax')
 		const vid = ytIdRegex.exec(match)
 		if (vid) {
 			const [result] = await yts(vid[1], true)
 			const { title, description, metadata } = result
 			return await message.send(
-				`*Title :* ${title}\n*Desc :* ${description}\n*Time :* ${metadata.length_seconds}s\n*Views :* ${metadata.view_count}\n*Publish :* ${metadata.publish_date}`
+				`⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Titel:* ${title}\n*Beschreibung:* ${description}\n*Länge:* ${metadata.length_seconds}s\n*Klicks:* ${metadata.view_count}\n*Uploaddatum:* ${metadata.publish_date}`
 			)
 		}
 
@@ -31,7 +31,7 @@ bot(
 		let msg = ''
 		result.forEach(
 			({ title, description, url, metadata }) =>
-				(msg += `• ${title}\nViews : ${metadata.view_count}\nTime : ${metadata.duration.accessibility_label}\nPublished : ${metadata.published}\nDesc : ${description}\nUrl : ${url}\n\n`)
+				(msg += `• ${title}\nKlicks: ${metadata.view_count}\nLänge: ${metadata.duration.accessibility_label}\nUploaddatum: ${metadata.published}\nBeschreibung: ${description}\nLink: ${url}\n\n`)
 		)
 		return await message.send(msg.trim())
 	}
@@ -48,7 +48,7 @@ bot(
 		match = match || message.reply_message.text
 		if (!match)
 			return await message.send(
-				'*Example : song indila love story/ yt link*'
+				'⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel:\nsong Name oder YT Link'
 			)
 		const vid = ytIdRegex.exec(match)
 		if (vid) {
@@ -74,7 +74,7 @@ bot(
 						id: `song https://www.youtube.com/watch?v=${id}`,
 						desc: duration.text,
 					})),
-					`Searched ${match}\nFound ${result.length} results`,
+					`⭐   _*Blvck Squad the Bot*_   ⭐\n\nSuche ${match}\n${result.length} Gefundene Ergebnisse`,
 					'DOWNLOAD'
 				),
 				{},
@@ -94,10 +94,10 @@ bot(
 	async (message, match) => {
 		match = match || message.reply_message.text
 		if (!match)
-			return await message.send('*Example : video yt_url*')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel:\nvideo yt_link')
 		const vid = ytIdRegex.exec(match)
 		if (!vid) {
-			return await message.send('*Example : video yt_url*')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel:\nvideo yt_link')
 			// const result = await yts(match)
 			// match = result[0].id
 		} else match = vid[1]
