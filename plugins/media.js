@@ -23,34 +23,34 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.video)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Markiere ein Video_')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Video_')
 		if (match === '')
-			return await message.send('⭐     _*SPKings*_     ⭐\n\nBeispiel: rotate right|left|flip')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel: rotate right|left|flip')
 		const location = await message.reply_message.downloadAndSaveMediaMessage(
 			'rotate'
 		)
 		if (/right/.test(match)) {
-			await message.send('_Konventiere..._')
+			await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Konventiere..._')
 			return await message.send(
 				await getFfmpegBuffer(location, 'orotate.mp4', 'right'),
 				{ mimetype: 'video/mp4', quoted: message.data },
 				'video'
 			)
 		} else if (/left/.test(match)) {
-			await message.send('_Konventiere..._')
+			await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Konventiere..._')
 			return await message.send(
 				await getFfmpegBuffer(location, 'orotate.mp4', 'left'),
 				{ mimetype: 'video/mp4', quoted: message.data },
 				'video'
 			)
 		} else if (/flip/.test(match)) {
-			await message.send('_Konventiere..._')
+			await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Konventiere..._')
 			return await message.send(
 				await getFfmpegBuffer(location, 'orotate.mp4', 'flip'),
 				{ mimetype: 'video/mp4', quoted: message.data },
 				'video'
 			)
-		} else await message.send('⭐     _*SPKings*_     ⭐\n\nBeispiel: rotate right|left|flip')
+		} else await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel: rotate right|left|flip')
 	}
 )
 
@@ -66,7 +66,7 @@ bot(
 			!message.reply_message ||
 			(!message.reply_message.video && !message.reply_message.audio)
 		)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Markiere ein Video oder Audio_')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Video oder Audio_')
 		return await message.send(
 			await getFfmpegBuffer(
 				await message.reply_message.downloadAndSaveMediaMessage('mp3'),
@@ -92,7 +92,7 @@ bot(
 			message.reply_message === false ||
 			message.reply_message.animated
 		)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Markiere ein Sticker_')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Sticker_')
 		return await message.send(
 			await getFfmpegBuffer(
 				await message.reply_message.downloadAndSaveMediaMessage('photo'),
@@ -118,7 +118,7 @@ bot(
 			!message.reply_message.video &&
 			!message.reply_message
 		)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Markiere ein Video oder Audio_')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Video oder Audio_')
 		const location = await message.reply_message.downloadAndSaveMediaMessage(
 			'reverse'
 		)
@@ -155,11 +155,11 @@ bot(
 			!message.reply_message ||
 			(!message.reply_message.audio && !message.reply_message.video)
 		)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Markiere ein Video oder Audio_')
-		if (!match) return await message.send('⭐     _*SPKings*_     ⭐\n\nBeispiel: trim 0;30')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Video oder Audio_')
+		if (!match) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel: trim 0;30')
 		const [start, duration] = match.split(':')
 		if (!start || !duration || isNaN(start) || isNaN(duration))
-			return await message.send('⭐     _*SPKings*_     ⭐\n\nBeispiel: trim 10:30')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel: trim 10:30')
 		return await message.send(
 			await audioCut(
 				await message.reply_message.downloadAndSaveMediaMessage('cut'),
@@ -186,11 +186,11 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.video)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Markiere ein Video_')
-		if (!match) return await message.send('⭐     _*SPKings*_     ⭐\n\nBeispiel: trim 10:30')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Video_')
+		if (!match) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel: trim 10:30')
 		const [start, duration] = match.split(':')
 		if (!start || !duration || isNaN(start) || isNaN(duration))
-			return await message.send('⭐     _*SPKings*_     ⭐\n\nBeispiel: trim 60:30')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel: trim 60:30')
 		return await message.send(
 			await videoTrim(
 				await message.reply_message.downloadAndSaveMediaMessage('trim'),
@@ -211,11 +211,11 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Antworte auf ein Bild_')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Antworte auf ein Bild_')
 		if (isNaN(match))
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n*Reply in order*\n*Ex: .page 1*')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Reply in order*\n*Ex: .page 1*')
 		await message.reply_message.downloadAndSaveMediaMessage(`./pdf/${match}`)
-		return await message.send('⭐     _*SPKings*_     ⭐\n\n_Seite hinzugefügt_ ' + match)
+		return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Seite hinzugefügt_ ' + match)
 	}
 )
 
@@ -227,7 +227,7 @@ bot(
 		type: 'document',
 	},
 	async (message, match) => {
-		await message.send('⭐     _*SPKings*_     ⭐\n\n_Lade PDF hoch..._')
+		await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Lade PDF hoch..._')
 		return await message.send(
 			await PDF(),
 			{
@@ -256,10 +256,10 @@ bot(
 			message.reply_message != false &&
 			!message.reply_message.video
 		)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Markiere ein Video_')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Video_')
 		if (match == '' && isNaN(match))
 			return await message.send(
-				'⭐     _*SPKings*_     ⭐\n\n_Antworte mit der Warteschlangennummer_\nBeispiel:\nmerge 1, merge 2, merge 3...'
+				'⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Antworte mit der Warteschlangennummer_\nBeispiel:\nmerge 1, merge 2, merge 3...'
 			)
 		if (/[0-9]+/.test(match)) {
 			await message.reply_message.downloadAndSaveMediaMessage(
@@ -270,7 +270,7 @@ bot(
 			let length = fs.readdirSync('./media/merge').length
 			if (!(length > 0))
 				return await message.send(
-					'```⭐     _*SPKings*_     ⭐\n\n_Füge Videos zur Warteschlange hinzu._```\nBeispiel\nmerge 1'
+					'```⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Füge Videos zur Warteschlange hinzu._```\nBeispiel\nmerge 1'
 				)
 			await message.send('```_Verbinde ' + length + ' Videos..._```')
 			return await message.send(
@@ -291,7 +291,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.video)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Markiere ein Video_')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Video_')
 		return await message.send(
 			await getFfmpegBuffer(
 				await message.reply_message.downloadAndSaveMediaMessage('compress'),
@@ -316,7 +316,7 @@ bot(
 			!message.reply_message ||
 			(!message.reply_message.audio && !message.reply_message.video)
 		)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Markiere ein Audio_')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Audio_')
 		return await message.send(
 			await getFfmpegBuffer(
 				await message.reply_message.downloadAndSaveMediaMessage('basso'),
@@ -341,7 +341,7 @@ bot(
 			!message.reply_message ||
 			(!message.reply_message.audio && !message.reply_message.video)
 		)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Markiere ein Audio oder Video_')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Audio oder Video_')
 		return await message.send(
 			await getFfmpegBuffer(
 				await message.reply_message.downloadAndSaveMediaMessage('trebleo'),
@@ -366,7 +366,7 @@ bot(
 			!message.reply_message ||
 			(!message.reply_message.audio && !message.reply_message.video)
 		)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Markiere ein Audio oder Video_')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Audio oder Video_')
 		return await message.send(
 			await getFfmpegBuffer(
 				await message.reply_message.downloadAndSaveMediaMessage('histo'),
@@ -391,7 +391,7 @@ bot(
 			!message.reply_message ||
 			(!message.reply_message.audio && !message.reply_message.video)
 		)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Markiere ein Audio oder Video_')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Audio oder Video_')
 		return await message.send(
 			await getFfmpegBuffer(
 				await message.reply_message.downloadAndSaveMediaMessage('vector'),
@@ -412,7 +412,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.video)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Markiere ein Video_')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Video_')
 		const [vw, vh, w, h] = match.split(',')
 		if (
 			!vh ||
@@ -425,7 +425,7 @@ bot(
 			typeof +vw !== 'number'
 		)
 			return await message.send(
-				`⭐     _*SPKings*_     ⭐\n\nBeispiel:\ncrop out_w,out_h,x,y\nx and y are top left where to start croping`
+				`⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel:\ncrop out_w,out_h,x,y\nx and y are top left where to start croping`
 			)
 		const location = await message.reply_message.downloadAndSaveMediaMessage(
 			'plain'
@@ -433,7 +433,7 @@ bot(
 		const { height, width } = await videoHeightWidth(location)
 		if (vw > width || vh > height)
 			return await message.send(
-				`⭐     _*SPKings*_     ⭐\n\n Video Breite: ${width}\nHöhe: ${height}*\n*Wähle eine Endgröße`
+				`⭐   _*Blvck Squad the Bot*_   ⭐\n\n Video Breite: ${width}\nHöhe: ${height}*\n*Wähle eine Endgröße`
 			)
 		return await message.send(
 			await cropVideo(location, vw, vh, w, h),
@@ -455,7 +455,7 @@ bot(
 			!message.reply_message ||
 			(!message.reply_message.audio && !message.reply_message.video)
 		)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Markiere ein Audio oder Video_')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Audio oder Video_')
 		return await message.send(
 			await getFfmpegBuffer(
 				await message.reply_message.downloadAndSaveMediaMessage('lowmp3'),
@@ -479,7 +479,7 @@ bot(
 			!message.reply_message ||
 			(!message.reply_message.audio && !message.reply_message.video)
 		)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Markiere ein Audio oder Video_')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Audio oder Video_')
 		return await message.send(
 			await getFfmpegBuffer(
 				await message.reply_message.downloadAndSaveMediaMessage('pitchmp3'),
@@ -503,7 +503,7 @@ bot(
 			!message.reply_message ||
 			(!message.reply_message.audio && !message.reply_message.video)
 		)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Markiere ein Audio oder Video_')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Audio oder Video_')
 		return await message.send(
 			await getFfmpegBuffer(
 				await message.reply_message.downloadAndSaveMediaMessage('avec'),
@@ -535,7 +535,7 @@ bot(
 				!message.reply_message.video)
 		)
 			return await message.send(
-				'⭐     _*SPKings*_     ⭐\n\n_Markiere ein Audio oder Video._'
+				'⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Audio oder Video._'
 			)
 		if (message.reply_message.audio) {
 			await message.reply_message.downloadAndSaveMediaMessage(
@@ -569,7 +569,7 @@ bot(
 			!message.reply_message ||
 			(!message.reply_message.audio && !message.reply_message.video)
 		)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Markiere ein Audio oder Video_')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Markiere ein Audio oder Video_')
 		await message.send(
 			await blackVideo(
 				await message.reply_message.downloadAndSaveMediaMessage('black')
