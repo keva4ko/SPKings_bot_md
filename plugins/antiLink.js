@@ -17,7 +17,7 @@ bot(
 					{ id: 'antilink info', text: 'INFO' },
 					{ id: `antilink ${onOrOff}`, text: onOrOff.toUpperCase() },
 				],
-				'⭐   _*Blvck Squad the Bot*_   ⭐\n\nKickt Mitglieder beim versenden verbotener Links.\nBeispiel:\nantilink on/off\nantilink 1,994,48\nantilink !49,!43,!41',
+				'⭐   _*Blvck Squad the Bot*_   ⭐\n\nKickt Mitglieder beim versenden verbotener Links.\nBeispiel:\nantilink on/off\nantilink action/warm\antilink action/kick\nantilink action/null\nantilink fb.com,facebook.com,twitter.com\nantilink !fb.com,!facebook.com,!twitter.com',
 				'Antilink'
 			)
 			return await message.send(button, {}, 'button')
@@ -49,7 +49,7 @@ bot(
 				return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nAntiLink ist noch deaktiviert.\nAktivere es mit antilink on.')
 			await setAntiLink(message.jid, match == 'on')
 			return await message.send(
-				`⭐️   _*Blvck Squad the Bot*_   ⭐️\n\nAlles klar, _AntiLink_ ist ${match == 'on' ? 'aktiviert.' : 'deaktiviert.'}`
+				`⭐️   _*Blvck Squad the Bot*_   ⭐️\n\nAlles klar, _AntiLink_ ist ${match == 'on' ? 'aktiviert.' : 'deaktiviert.'}😊`
 			)
 		}
 		if (match == 'info')
