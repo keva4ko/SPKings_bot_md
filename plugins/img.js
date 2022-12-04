@@ -8,7 +8,7 @@ bot(
 		type: 'search',
 	},
 	async (message, match) => {
-		if (!match) return await message.send('⭐     _*SPKings*_     ⭐\n\nBeispiel: img bot\n*-img 10 bot')
+		if (!match) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel: img bot\n*-img 10 bot')
 		let lim = 3
 		const count = /\d+/.exec(match)
 		if (count) {
@@ -19,7 +19,7 @@ bot(
 		lim =
 			(result.length && (result.length > lim ? lim : result.length)) ||
 			result.length
-		await message.send(`⭐*SPKings*⭐\n\n_Lade ${lim} Bilder von ${match.trim()} herunter..._`)
+		await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Lade ${lim} Bilder von ${match.trim()} herunter..._⏳`)
 		for (let i = 0; i < lim; i++) {
 			await message.sendFromUrl(result[i], { buffer: false })
 		}
