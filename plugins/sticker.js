@@ -12,7 +12,7 @@ bot(
 	{
 		pattern: 'sticker',
 		fromMe: fm,
-		desc: 'image/video to sticker',
+		desc: 'Bild oder Video zu Sticker',
 		type: 'sticker',
 	},
 	async (message, match) => {
@@ -20,7 +20,7 @@ bot(
 			!message.reply_message ||
 			(!message.reply_message.video && !message.reply_message.image)
 		)
-			return await message.send('*Reply to image/video*')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Markiere einen Bild oder Video.*')
 		return await message.send(
 			await sticker(
 				'str',
@@ -41,12 +41,12 @@ bot(
 	{
 		pattern: 'circle',
 		fromMe: fm,
-		desc: 'image to circle sticker',
+		desc: 'Bild zu einem Kreissticker',
 		type: 'sticker',
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('*Reply to a image*')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Markiere ein Bild.*')
 		return await message.send(
 			await circleSticker(
 				await message.reply_message.downloadAndSaveMediaMessage(
@@ -64,7 +64,7 @@ bot(
 	{
 		pattern: 'take ?(.*)',
 		fromMe: true,
-		desc: 'change sticker pack',
+		desc: 'Stickerpaket ändern',
 		type: 'sticker',
 	},
 	async (message, match) => {
@@ -72,7 +72,7 @@ bot(
 			!message.reply_message ||
 			(!message.reply_message.sticker && !message.reply_message.audio)
 		)
-			return await message.send('*Reply to sticker/audio*')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Markiere einen Sticker oder Audio.*')
 		if (message.reply_message.sticker)
 			return await message.send(
 				await addExif(
@@ -84,7 +84,7 @@ bot(
 			)
 		if (!match)
 			return await message.send(
-				`*Give me title,artists,url*\n*aritists or url is optional*`
+				`⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Gib mir einen titel,artists,link*\n*Aritists oder Link muss nicht umbedingt sein.*`
 			)
 		const [title, artists, url] = match.split(',')
 		return await message.send(
@@ -105,7 +105,7 @@ bot(
 	{
 		pattern: 'mp4',
 		fromMe: fm,
-		desc: 'animated sticker to video',
+		desc: 'Animierte Sticker zu Video',
 		type: 'sticker',
 	},
 	async (message, match) => {
@@ -114,7 +114,7 @@ bot(
 			!message.reply_message ||
 			!message.reply_message.animated
 		)
-			return await message.send('*Reply to animated sticker*')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Markiere einen animierten Sticker.*')
 		return await message.sendFromUrl(
 			await webpToMp4(
 				await message.reply_message.downloadAndSaveMediaMessage('sticker')
