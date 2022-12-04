@@ -28,7 +28,7 @@ bot(
 	{
 		pattern: 'left',
 		fromMe: fm,
-		dec: 'To leave from group',
+		dec: 'Aus der Gruppe gehen',
 		type: 'user',
 		onlyGroup: true,
 	},
@@ -42,7 +42,7 @@ bot(
 	{
 		pattern: 'block',
 		fromMe: fm,
-		desc: 'Block a person',
+		desc: 'Mitglied wird vom Bot blockiert',
 		type: 'user',
 	},
 	async (message, match) => {
@@ -50,8 +50,8 @@ bot(
 			message.mention[0] ||
 			message.reply_message.jid ||
 			(!message.isGroup && message.jid)
-		if (!id) return await message.send('*Give me a person*')
-		await message.send('_Blocked_')
+		if (!id) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Um wen gehts den?*')
+		await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_NUTZER BLOCKIERT!_')
 		await message.Block(id)
 	}
 )
@@ -60,7 +60,7 @@ bot(
 	{
 		pattern: 'unblock',
 		fromMe: fm,
-		desc: 'Unblock a person',
+		desc: 'Mitglied vom Bot entblockieren',
 		type: 'user',
 	},
 	async (message, match) => {
@@ -68,8 +68,8 @@ bot(
 			message.mention[0] ||
 			message.reply_message.jid ||
 			(!message.isGroup && message.jid)
-		if (!id) return await message.send('*Give me a person*')
-		await message.send('_Unblocked_')
+		if (!id) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Um wen gehts den?*')
+		await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_BLOCK AUFGEHOBEN!_')
 		await message.Unblock(id)
 	}
 )
@@ -78,16 +78,16 @@ bot(
 	{
 		pattern: 'pp',
 		fromMe: fm,
-		desc: 'Change Profile Picture',
+		desc: 'Profilbild ändern',
 		type: 'user',
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('*Reply to a image*')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Markiere ein Bild*')
 		await message.updateProfilePicture(
 			await message.reply_message.downloadMediaMessage()
 		)
-		return await message.send('_Profile Picture Updated_')
+		return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Profilbild vom Bot wurde aktualisiert!_')
 	}
 )
 
@@ -115,18 +115,18 @@ bot(
 		if (id) {
 			try {
 				const { status, setAt } = await message.fetchStatus(id)
-				caption += `*Name :* ${await getName(gid, id)}\n*Num :* +${jidToNum(
+				caption += `*Mitgliedinformationen*\n\n*Name:* ${await getName(gid, id)}\n*Nummer:* +${jidToNum(
 					id
-				)}\n*About :* ${status}\n*setAt :* ${formatTime(setAt, id)}`
+				)}\n*Status:* ${status}\n*Zuletzt gesehen:* ${formatTime(setAt, id)}`
 			} catch (error) {}
 		} else {
 			const { subject, size, creation, desc, owner } =
 				await message.groupMetadata(gid, !!gid)
-			caption += `*Name :* ${subject}\n*Owner :* ${owner ? '+' : ''}${jidToNum(
+			caption += `*Name:* ${subject}\n*Owner:* ${owner ? '+' : ''}${jidToNum(
 				owner
-			)}\n*Members :* ${size}\n*Created :* ${formatTime(
+			)}\n*Mitglieder:* ${size}\n*Erstellt:* ${formatTime(
 				creation
-			)}\n*Desc :* ${desc}`
+			)}\n*Beschreibung:* ${desc}`
 		}
 		return await message.sendFromUrl(pp, { caption })
 	}
