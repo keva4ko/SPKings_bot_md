@@ -12,13 +12,13 @@ bot(
 	{
 		pattern: 'tictactoe ?(.*)',
 		fromMe: true,
-		desc: 'TicTacToe',
+		desc: 'TicTacToe Spiel',
 		type: 'game',
 	},
 	async (message, match) => {
 		if (match == 'end') {
 			await delTicTacToe()
-			return await message.send('*Game Over*')
+			return await message.send('*SPIEL VORBEI*')
 		}
 		let [restart, id] = match.split(' ')
 		const game = isTactacToe()
