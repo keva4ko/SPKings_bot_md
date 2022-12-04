@@ -4,11 +4,11 @@ bot(
 	{
 		pattern: 'reboot ?(.*)',
 		fromMe: true,
-		desc: 'restart with pm2',
+		desc: 'ADMINISTRATION restart with pm2',
 		type: 'misc',
 	},
 	async (message, match) => {
-		await message.send(`_Restarting_`)
+		await message.send(`⭐️   _*Blvck Squad the Bot*_   ⭐️\n\n_Ich starte neu, gib mir ne Minute._⏳`)
 		restartInstance()
 	}
 )
