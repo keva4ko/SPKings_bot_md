@@ -4,7 +4,7 @@ bot(
 	{
 		pattern: 'pdm ?(.*)',
 		fromMe: true,
-		desc: 'To manage promote demote alert',
+		desc: 'Nachricht wenn Admin vergeben wird',
 		type: 'group',
 		onlyGroup: true,
 	},
@@ -13,10 +13,10 @@ bot(
 			await message.send(
 				await genButtonMessage(
 					[
-						{ id: 'pdm on', text: 'ON' },
-						{ id: 'pdm off', text: 'OFF' },
+						{ id: 'pdm on', text: 'AN' },
+						{ id: 'pdm off', text: 'AUS' },
 					],
-					'Promote Demote Message'
+					'⭐️   _*Blvck Squad the Bot*_   ⭐️\n\nNachricht wenn Admin verteilt wird'
 				),
 				{},
 				'button'
@@ -24,7 +24,7 @@ bot(
 		if (match == 'on' || match == 'off') {
 			await setPdm(message.jid, match)
 			await message.send(
-				`_pdm ${match == 'on' ? 'Activated' : 'Deactivated'}_`
+				`⭐️   _*Blvck Sqaud the Bot*_   ⭐️\n\n_PDM ist ${match == 'on' ? 'an' : 'aus'}._😊`
 			)
 		}
 	}
