@@ -4,7 +4,7 @@ bot(
 	{
 		pattern: 'news ?(.*)',
 		fromMe: true,
-		desc: 'malayalam news',
+		desc: 'Malayalam Nachrichten',
 		type: 'misc',
 	},
 	async (message, match) => {
@@ -18,7 +18,7 @@ bot(
 						desc: time,
 					})),
 					result.map(({ title }) => title).join('\n\n'),
-					'READ'
+					'LESEN'
 				),
 				{},
 				'list'
