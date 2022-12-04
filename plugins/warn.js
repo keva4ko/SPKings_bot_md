@@ -30,9 +30,7 @@ bot(
 			if (!u) return await message.send('⭐️   _*Blvck Squad the Bot*_   ⭐️\n\n*Markiere einen Mitglied*')
 			const count = await setWarn(u, message.jid, (!isNaN(u) && u) || -1)
 			return await message.send(
-				`⭐️   _*Blvck Squad the Bot*_   ⭐️\n\nWarnungen zurückgesetzt bei @${jidToNum(u)}\nVerbleibende Warnungen: ${
-					config.WARN_LIMIT - count
-				}`,
+				`⭐️   _*Blvck Squad the Bot*_   ⭐️\n\nWarnungen zurückgesetzt bei @${jidToNum(u)}.`,
 				{ contextInfo: { mentionedJid: [u] } }
 			)
 		}
@@ -55,7 +53,7 @@ bot(
 		}
 		return await message.send(
 			await genButtonMessage(
-				[{ id: `warn reset ${user}`, text: 'RESET' }],
+				[{ id: `warn reset ${user}`, text: 'Warnung entfernen' }],
 				`⭐️   _*Blvck Squad the Bot*_   ⭐️\n\n⚠️!!!WARNUNG!!!⚠️\nMitglied @${jidToNum(
 					user
 				)}\n*Dir wurde eine Warnung ausgesprochen, pass auf was du als nächstes machst sonst droht der Kick!*`
