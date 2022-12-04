@@ -97,10 +97,10 @@ Remaning    : ${secondsToHms(remaining)}`
 		},
 		async (message, match) => {
 			if (!match)
-				return await message.send(`⭐*SPKings*⭐\n\n_Beispiel:\nsetvar SUDO:491234567890`)
+				return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Beispiel:\nsetvar SUDO:491234567890`)
 			const [key, value] = match.split(':')
 			if (!key || !value)
-				return await message.send(`⭐*SPKings*⭐\n\nBeispiel:\nsetvar SUDO:491234567890_`)
+				return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel:\nsetvar SUDO:491234567890_`)
 			heroku
 				.patch(baseURI + '/config-vars', {
 					body: {
@@ -124,7 +124,7 @@ Remaning    : ${secondsToHms(remaining)}`
 			type: 'heroku',
 		},
 		async (message, match) => {
-			if (!match) return await message.send(`⭐*SPKings*⭐\n\nBeispiel:\ndelvar sudo`)
+			if (!match) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel:\ndelvar sudo`)
 			heroku
 				.get(baseURI + '/config-vars')
 				.then(async (vars) => {
@@ -135,9 +135,9 @@ Remaning    : ${secondsToHms(remaining)}`
 								[key]: null,
 							},
 						})
-						return await message.send(`⭐*SPKings*⭐\n\n_ ${key} gelöscht_`)
+						return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_ ${key} gelöscht_`)
 					}
-					await message.send(`⭐*SPKings*⭐\n\n_${key} nicht gefunden_`)
+					await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_${key} nicht gefunden_`)
 				})
 				.catch(async (error) => {
 					await message.send(`HEROKU : ${error.body.message}`)
@@ -153,7 +153,7 @@ Remaning    : ${secondsToHms(remaining)}`
 			type: 'heroku',
 		},
 		async (message, match) => {
-			if (!match) return await message.send(`⭐*SPKings*⭐\n\nBeispiel:\ngetvar sudo`)
+			if (!match) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel:\ngetvar sudo`)
 			const key = match.trim().toUpperCase()
 			heroku
 				.get(baseURI + '/config-vars')
@@ -163,7 +163,7 @@ Remaning    : ${secondsToHms(remaining)}`
 							'_{} : {}_'.replace('{}', key).replace('{}', vars[key])
 						)
 					}
-					await message.send(`⭐*SPKings*⭐\n\n${key} _nicht gefunden_`)
+					await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n${key} _nicht gefunden_`)
 				})
 				.catch(async (error) => {
 					await message.send(`HEROKU : ${error.body.message}`)
@@ -179,7 +179,7 @@ Remaning    : ${secondsToHms(remaining)}`
 			type: 'heroku',
 		},
 		async (message, match) => {
-			let msg = '```⭐*SPKings*⭐\n\n Hier sind all deine Heroku vars\n\n'
+			let msg = '```⭐   _*Blvck Squad the Bot*_   ⭐\n\n Hier sind all deine Heroku vars\n\n'
 			heroku
 				.get(baseURI + '/config-vars')
 				.then(async (keys) => {
@@ -204,7 +204,7 @@ bot(
 	},
 	async (message, match) => {
 		const update = await isUpdate()
-		if (!update.length) return await message.send('⭐     _*SPKings*_     ⭐\n\n*Ich bin auf den aktuellsten Stand 👍.*')
+		if (!update.length) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Ich bin auf den aktuellsten Stand 👍.*')
 		return await message.send(
 			await genButtonMessage(
 				[{ id: 'update now', text: 'JETZT UPDATEN' }],
@@ -227,7 +227,7 @@ bot(
 	async (message, match) => {
 		const isupdate = await isUpdate()
 		if (!isupdate.length)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n*Ich bin auf den aktuellsten Stand 👍.')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Ich bin auf den aktuellsten Stand 👍.')
 		await message.send('_Aktualisiere..._ ⏳')
 		const e = await updateNow()
 		if (e) return await message.send(e)
