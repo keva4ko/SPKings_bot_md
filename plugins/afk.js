@@ -10,13 +10,13 @@ bot(
 	{
 		pattern: 'afk ?(.*)',
 		fromMe: true,
-		desc: 'Wenn nicht erreichbar',
+		desc: 'Bot geht afk',
 		type: 'misc',
 	},
 	async (message, match) => {
 		if (!global.AFK.isAfk && !match)
 			return await message.send(
-				'⭐     _*SPKings*_     ⭐\n\nIst aktuell nicht erreichbar\nZuletzt gesehen: #zuletztgesehen'
+				'⭐   _*Blvck Squad the Bot*_   ⭐\n\nSetzt den Bot auf AFK.\nBeispiel:\nafk [Abwesenheitsnachricht] #zuletztgesehen'
 			)
 		if (!global.AFK.isAfk) {
 			if (match) global.AFK.reason = match
