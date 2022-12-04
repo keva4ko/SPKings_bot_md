@@ -20,13 +20,13 @@ bot(
 	async (message, match) => {
 		const welcome = await getMessage(message.jid, 'welcome')
 		if (!match && !welcome)
-			return await message.send('⭐*SPKings*⭐\n\nBeispiel: welcome Hi &mention')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nSendet einen personalisierten Willkommensgruß an die neuen Mitglieder\nBeispiel:\nwelcome Hi &mention')
 		if (!match) {
 			await message.send(welcome.message)
-			const onOrOff = welcome && welcome.enabled ? 'aus' : 'an'
+			const onOrOff = welcome && welcome.enabled ? 'off' : 'on'
 			const button = await genButtonMessage(
 				[{ id: `welcome ${onOrOff}`, text: onOrOff.toUpperCase() }],
-				'⭐*SPKings*⭐\n\nBeispiel:\nhttps://github.com/lyfe00011//whatsapp-bot-md/wiki/Greetings',
+				'⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel:\nwelcome Hi &mention, willkommen zu &name,&disc,&size/257 Mitglieder.',
 				'Welcome'
 			)
 			return await message.send(button, {}, 'button')
@@ -48,22 +48,22 @@ bot(
 			// 	'template'
 			// )
 		}
-		if (match == 'an' || match == 'aus') {
-			if (!welcome) return await message.send('⭐*SPKings*⭐\n\nBeispiel:\nwelcome Hi &mention')
+		if (match == 'on' || match == 'off') {
+			if (!welcome) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel:\nwelcome Hi &mention')
 			await enableGreetings(message.jid, 'welcome', match)
 			return await message.send(
-				`_Welcome  ${match == 'an' ? 'AKTIVIERT' : 'DEAKTIVIERT'}_`
+				`⭐️   _*Blvck Squad the Bot*_   ⭐️\n\n_Willkommensgrüße wurde ${match == 'on' ? 'aktiviert' : 'deaktiviert'}._😊`
 			)
 		}
-		if (match === 'löschen') {
-			await message.send('⭐*SPKings*⭐\n\n_Willkommensgruß gelöscht_')
+		if (match === 'delete') {
+			await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Willkommensgruß gelöscht_')
 			clearGreetings(message.jid, 'welcome')
 			return await deleteMessage(message.jid, 'welcome')
 		}
 		await setMessage(message.jid, 'welcome', match)
 		const { msg, options, type } = await greetingsPreview(message, 'welcome')
 		await message.send(msg, options, type)
-		return await message.send('⭐*SPKings*⭐\n\n_Willkommensgruß gesetzt_')
+		return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Willkommensgruß gesetzt_')
 	}
 )
 
@@ -71,14 +71,14 @@ bot(
 	{
 		pattern: 'goodbye ?(.*)',
 		fromMe: true,
-		desc: 'Goodbye members',
+		desc: 'Abschied',
 		onlyGroup: true,
 		type: 'group',
 	},
 	async (message, match) => {
 		const welcome = await getMessage(message.jid, 'goodbye')
 		if (!match && !welcome)
-			return await message.send('⭐*SPKings*⭐\n\nBeispiel: goodbye Tschüss &mention')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel:\ngoodbye Tschüss &mention')
 		if (!match) {
 			await message.send(welcome.message)
 			const onOrOff = welcome && welcome.enabled ? 'aus' : 'an'
@@ -108,22 +108,22 @@ bot(
 			// 	'template'
 			// )
 		}
-		if (match == 'an' || match == 'aus') {
+		if (match == 'on' || match == 'off') {
 			if (!welcome)
-				return await message.send('⭐*SPKings*⭐\n\nBeispiel:\ngoodbye Tschüss #mention')
+				return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel:\ngoodbye Tschüss #mention')
 			await enableGreetings(message.jid, 'goodbye', match)
 			return await message.send(
-				`_Goodbye ${match == 'an' ? 'AKTIVIERT' : 'DEAKTIVIERT'}_`
+				`⭐️   _*Blvck Squad the Bot*_   ⭐️\n\n_Abschiede an Mitglieder wurde ${match == 'on' ? 'aktiviert' : 'deaktiviert'}._😊`
 			)
 		}
-		if (match === 'löschen') {
-			await message.send('⭐*SPKings*⭐\n\n_Abschied gelöscht_')
+		if (match === 'delete') {
+			await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Abschied wurde gelöscht_')
 			clearGreetings(message.jid, 'goodbye')
 			return await deleteMessage(message.jid, 'goodbye')
 		}
 		await setMessage(message.jid, 'goodbye', match)
 		const { msg, options, type } = await greetingsPreview(message, 'goodbye')
 		await message.send(msg, options, type)
-		return await message.send('⭐*SPKings*⭐\n\n_Abschied gesetzt_')
+		return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Abschied wurde gesetzt_')
 	}
 )
