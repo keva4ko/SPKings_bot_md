@@ -7,18 +7,18 @@ bot(
 		type: 'download',
 	},
 	async (message, match) => {
-		if (!match) return await message.send('⭐*SPKings*⭐\n\nBeispiel: apk Link')
+		if (!match) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nLädt Apps aus Apkmirror herunter.\nBeispiel: apk [Link]')
 		const { result, status } = await apkMirror(match)
 		if (status > 400) {
 			if (!result.length)
 				return await message.send(
-					'⭐*SPKings*⭐\n\n_Deine Eingabe führt zu nichts_'
+					'⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Dein Link führt mich zu nichts_🤷‍♂️'
 				)
 			const list = []
 			for (const { title, url } of result)
-				list.push({ id: `apk ${status};;${url}`, text: title })
+				list.push({ id: `apk ${status};;${url}`, text: Name })
 			return await message.send(
-				genListMessage(list, 'Matching apps', 'DOWNLOAD'),
+				genListMessage(list, 'Gefundene Apps', 'DOWNLOAD'),
 				{},
 				'list'
 			)
