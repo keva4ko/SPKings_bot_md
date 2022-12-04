@@ -9,10 +9,10 @@ bot(
 	},
 	async (message, match) => {
 		match = isUrl(match || message.reply_message.text)
-		if (!match) return await message.send('_Example : reddit url_')
+		if (!match) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Beispiel: reddit [Link]_')
 		const result = await reddit(match)
 		if (!result)
-			return await message.send('*Not found*', {
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Leere hier...*', {
 				quoted: message.quoted,
 			})
 		return await message.sendFromUrl(result)
