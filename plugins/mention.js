@@ -48,16 +48,16 @@ bot(
 		}
 		if (match == 'get') {
 			const msg = await mentionMessage()
-			if (!msg) return await message.send('⭐*SPKings*⭐\n\nAntwort an Mention ist nicht aktiviert.')
+			if (!msg) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nAntwort an Mention ist nicht aktiviert.')
 			return await message.send(msg)
 		} else if (match == 'an' || match == 'aus') {
 			await enableMention(match == 'an')
 			return await message.send(
-				`_Reply to mention ${match == 'an' ? 'AKTIVIERT' : 'Deaktiviert'}_`
+				`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Antwort an Mention ist ${match == 'on' ? 'AKTIVIERT' : 'Deaktiviert'}._`
 			)
 		}
 		await enableMention(match)
 		clearFiles()
-		return await message.send('_Mention geupdatet_')
+		return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Mention Update erfolgreich_')
 	}
 )
