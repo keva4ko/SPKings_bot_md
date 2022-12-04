@@ -45,7 +45,7 @@ bot(
 			if (isUserAdmin)
 				return await message.send(`⭐️   _*Blvck Squad the Bot*_   ⭐️\n\n_Admins können nicht entfernt werden._`)
 			await message.send(
-				`⭐️   _*Blvck Squad the Bot*_   ⭐️\n\n_Der Mitglied @${jidToNum(user)} hat seine letzte Chance vergeigt.\n BB👋🏽_`,
+				`⭐️   _*Blvck Squad the Bot*_   ⭐️\n\n_Der Mitglied @${jidToNum(user)} hat seine letzte Chance vergeigt._\n BB👋🏽`,
 				{ contextInfo: { mentionedJid: [user] } }
 			)
 			await deleteWarn(user, message.jid)
