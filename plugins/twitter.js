@@ -9,10 +9,10 @@ bot(
 	},
 	async (message, match) => {
 		match = isUrl(match || message.reply_message.text)
-		if (!match) return await message.send('_Example : twitter url_')
+		if (!match) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Beispiel:\ntwitter [Link]_')
 		const result = await twitter(match)
 		if (!result.length)
-			return await message.send('*Not found*', {
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_*Video nicht gefunden!*', {
 				quoted: message.quoted,
 			})
 		return await message.send(
@@ -21,7 +21,7 @@ bot(
 					id: `upload ${e.url}`,
 					text: e.quality.split('x')[0],
 				})),
-				'Choose Video Quality'
+				'Wähle die Videoqualität aus'
 			),
 			{},
 			'button'
