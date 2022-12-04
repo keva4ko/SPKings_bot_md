@@ -14,16 +14,16 @@ bot(
 	{
 		pattern: 'plugin ?(.*)',
 		fromMe: true,
-		desc: 'Install External plugins',
+		desc: 'ADMINISTRATION Install External plugins',
 		type: 'misc',
 	},
 	async (message, match) => {
 		match = match || message.reply_message.text
 		if (!match && match !== 'list')
-			return await message.send('*Example :*\nplugin url\nplugin list')
+			return await message.send('⭐️   _*Blvck Squad the Bot*_   ⭐️\n\nZur Installation oder update von Plugins\n*Beispiele:*\nplugin url\nplugin list')
 		if (match == 'list') {
 			const plugins = await getPlugin()
-			if (!plugins) return await message.send(`*Plugins not installed*`)
+			if (!plugins) return await message.send(`⭐️   _*Blvck Squad the Bot*_   ⭐️\n\n*Plugins nicht installiert!*`)
 			let msg = ''
 			plugins.map(({ name, url }) => {
 				msg += `${name} : ${url}\n`
@@ -35,7 +35,7 @@ bot(
 			const { url } = await getPlugin(match)
 			if (url) return await message.send(url, { quoted: message.data })
 		}
-		if (!isValidUrl) return await message.send('*Give me valid plugin urls*')
+		if (!isValidUrl) return await message.send('⭐️   _*Blvck Squad the Bot*_   ⭐️\n\n*Ich brauche einen gültigen Link zum Plugin*')
 		for (const url of isValidUrl) {
 			try {
 				const res = await got(url)
@@ -51,7 +51,7 @@ bot(
 					}
 					await setPlugin(plugin_name, url)
 					await message.send(
-						`_Newly installed plugins are : ${pluginsList(res.body).join(',')}_`
+						`_${pluginsList(res.body).join(',')} aktualisiert!_`
 					)
 				}
 			} catch (error) {
@@ -65,34 +65,34 @@ bot(
 	{
 		pattern: 'remove ?(.*)',
 		fromMe: true,
-		desc: 'Delete External Plugins',
+		desc: 'ADMINISTRATION Delete External Plugins',
 		type: 'misc',
 	},
 	async (message, match) => {
 		if (!match)
-			return await message.send('*Example :*\nremove mforward\nremove all')
+			return await message.send('⭐️   _*Blvck Squad the Bot*_   ⭐️\n\nZum löschen von Plugins\n*Beispiele:*\nremove mforward\nremove all')
 		if (match == 'all') {
 			await delPlugin()
 			return await message.send(
 				await genButtonMessage(
-					[{ text: 'RESTART BOT', id: 'restart' }],
-					'_All plugins deleted Successfully_'
+					[{ text: 'NEUSTART BOT', id: 'restart' }],
+					'⭐️   _*Blvck Squad the Bot*_   ⭐️\n\n_Alle Plugins wurden erfolgreich entfernt_👍'
 				),
 				{},
 				'button'
 			)
 		}
 		const isDeleted = await delPlugin(match)
-		if (!isDeleted) return await message.send(`*Plugin ${match} not found*`)
+		if (!isDeleted) return await message.send(`⭐️   _*Blvck Squad the Bot*_   ⭐️\n\n*Ich kann das Plugin für ${match} nicht finden.*🤷‍♂️`)
 		delete require.cache[require.resolve('../plugins/' + match + '.js')]
 		unlinkSync('./plugins/' + match + '.js')
 		return await message.send(
 			await genButtonMessage(
 				[
-					{ text: 'RESTART', id: 'restart' },
-					{ text: 'REBOOT', id: 'reboot' },
+					{ text: 'Neustart PM2', id: 'restart' },
+					{ text: 'Neustart System', id: 'reboot' },
 				],
-				'_Plugin Deleted_'
+				'⭐️   _*Blvck Squad the Bot*_   ⭐️\n\n_Plugin erfolgreich entfernt_'
 			),
 			{},
 			'button'
