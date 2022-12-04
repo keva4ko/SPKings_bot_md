@@ -14,14 +14,14 @@ bot(
 		if (isRestrict) {
 			const participants = await message.groupMetadata(message.jid)
 			const isImAdmin = await isAdmin(participants, message.client.user.jid)
-			if (!isImAdmin) return await message.send(`⭐*SPKings*⭐\n\n_Ich brauche Adminrechte._`)
+			if (!isImAdmin) return await message.send(`⭐   _*Blvck Squad the Bot*_⭐\n\n_Ich brauche Adminrechte._`)
 		}
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐*SPKings*⭐\n\n*Markiere ein Bild.*')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Markiere ein Bild.*')
 		await message.updateProfilePicture(
 			await message.reply_message.downloadMediaMessage(),
 			message.jid
 		)
-		return await message.send('⭐*SPKings*⭐\n\n_Gruppenbild aktualisiert_')
+		return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Gruppenbild aktualisiert_😊')
 	}
 )
