@@ -3,12 +3,12 @@ bot(
 	{
 		pattern: 'react ?(.*)',
 		fromMe: true,
-		desc: 'React to msg',
+		desc: 'Auf eine Nachricht reagieren',
 		type: 'misc',
 	},
 	async (message, match) => {
 		if (!match || !message.reply_message)
-			return await message.send('_Example : react ❣_')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Beispiel: react ❣_')
 		return await message.send(
 			{
 				text: match,
