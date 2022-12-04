@@ -10,14 +10,14 @@ bot(
 	async (message, match) => {
 		if (!match)
 			return await message.send(
-				'⭐     _*SPKings*_     ⭐\n\nBeispiel: lydia on/off*\noder antworte auf eine Nachricht'
+				'⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel: lydia on/off'
 			)
 		const user = message.mention[0] || message.reply_message.jid
 		await setLydia(message.jid, match == 'on', user)
 		await message.send(
-			`_Lydia ${
+			`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Dein Chatbot wurde erfolgreich ${
 				match == 'on' ? 'AKTIVIERT' : 'DEAKTIVIERT'
-			}_\n*Only works from reply msg.`
+			}._\n*Funktioniert nur wenn man markiert wird.*`
 		)
 	}
 )
