@@ -4,7 +4,7 @@ bot(
 		pattern: 'tag ?(.*)',
 		fromMe: true,
 		onlyGroup: true,
-		desc: 'tag members or msg',
+		desc: 'Markiert Mitglieder',
 		type: 'group',
 	},
 	async (message, match) => {
@@ -46,7 +46,7 @@ bot(
 			})
 		if (!message.reply_message)
 			return await message.send(
-				'*Example :*\ntag all\ntag admin\ntag notadmin\ntag text\nReply to a message'
+				'⭐   _*Blvck Squad the Bot*_   ⭐\n\n_*Beispiele:*\ntag all\ntag admin\ntag notadmin\ntag text\nAntworte auf eine Nachricht.'
 			)
 		forwardOrBroadCast(message.jid, message, { contextInfo: { mentionedJid } })
 	}
