@@ -21,17 +21,17 @@ bot(
 	async (message, match) => {
 		const participants = await message.groupMetadata(message.jid)
 		const isImAdmin = await isAdmin(participants, message.client.user.jid)
-		if (!isImAdmin) return await message.send(`_I'm not admin._`)
+		if (!isImAdmin) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Mir fehlen Adminrechte._😐`)
 		let user = message.mention[0] || message.reply_message.jid
-		if (!user && match != 'all') return await message.send(`_Give me a user_`)
+		if (!user && match != 'all') return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Wen willst du rauswerfen?_`)
 		const isUserAdmin = match != 'all' && (await isAdmin(participants, user))
-		if (isUserAdmin) return await message.send(`_User is admin._`)
+		if (isUserAdmin) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Der Mitglied ist ein Admin._🙄`)
 		if (match == 'all') {
 			user = participants
 				.filter((member) => !member.admin == true)
 				.map(({ id }) => id)
 			await message.send(
-				`_kicking everyone(${user.length})_\n*Restart bot if u wanna stop.*`
+				`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Jeder wird rausgeworfen (${user.length})`
 			)
 			await sleep(10 * 1000)
 		}
@@ -50,12 +50,12 @@ bot(
 	async (message, match) => {
 		const participants = await message.groupMetadata(message.jid)
 		const isImAdmin = await isAdmin(participants, message.client.user.jid)
-		if (!isImAdmin) return await message.send(`⭐*SPKings*⭐\n\n_Ich bin kein Admin._`)
+		if (!isImAdmin) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Ich bin kein Admin._`)
 		match = match || message.reply_message.jid
-		if (!match) return await message.send('⭐*SPKings*⭐\n\nBeispiel:\nadd 491234567890')
+		if (!match) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nFügt Mitglieder der Gruppe hinzu\nBeispiel:\nadd 491234567890')
 		match = jidToNum(match)
 		const res = await message.Add(match)
-		if (res == '403') return await message.send('⭐*SPKings*⭐\n\n_Fehlgeschlagen, Gruppeneinladung wird gesendet_')
+		if (res == '403') return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Ich kann ihn nicht hinzufügen.🙄\nIch schicke dem ne Gruppeneinladung._😊')
 		else if (res && res != '200')
 			return await message.send(res, { quoted: message.data })
 	}
@@ -72,11 +72,11 @@ bot(
 	async (message, match) => {
 		const participants = await message.groupMetadata(message.jid)
 		const isImAdmin = await isAdmin(participants, message.client.user.jid)
-		if (!isImAdmin) return await message.send(`⭐*SPKings*⭐\n\n_Ich bin kein Admin._`)
+		if (!isImAdmin) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Ich bin kein Admin._🙄`)
 		const user = message.mention[0] || message.reply_message.jid
-		if (!user) return await message.send(`_Give me a user._`)
+		if (!user) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Wen willst du Admin geben?_`)
 		const isUserAdmin = await isAdmin(participants, user)
-		if (isUserAdmin) return await message.send(`⭐*SPKings*⭐\n\n_Mitglied ist schon ein Admin._`)
+		if (isUserAdmin) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Mitglied ist schon ein Admin._`)
 		return await message.Promote(user)
 	}
 )
@@ -92,11 +92,11 @@ bot(
 	async (message, match) => {
 		const participants = await message.groupMetadata(message.jid)
 		const isImAdmin = await isAdmin(participants, message.client.user.jid)
-		if (!isImAdmin) return await message.send(`⭐*SPKings*⭐\n\n_Ich bin kein Admin._`)
+		if (!isImAdmin) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Ich bin kein Admin._🙄`)
 		const user = message.mention[0] || message.reply_message.jid
-		if (!user) return await message.send(`_Give me a user._`)
+		if (!user) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Wem willst du Adminrechte entziehen?_`)
 		const isUserAdmin = await isAdmin(participants, user)
-		if (!isUserAdmin) return await message.send(`⭐*SPKings*⭐\n\n_Mitglied ist kein Admin._`)
+		if (!isUserAdmin) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Mitglied ist kein Admin._`)
 		return await message.Demote(user)
 	}
 )
@@ -112,7 +112,7 @@ bot(
 	async (message, match) => {
 		const participants = await message.groupMetadata(message.jid)
 		const isImAdmin = await isAdmin(participants, message.client.user.jid)
-		if (!isImAdmin) return await message.send(`⭐*SPKings*⭐\n\n_Ich bin kein Admin._`)
+		if (!isImAdmin) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Ich bin kein Admin._🙄`)
 		return await message.send(await message.inviteCode(message.jid))
 	}
 )
@@ -128,7 +128,7 @@ bot(
 	async (message, match) => {
 		const participants = await message.groupMetadata(message.jid)
 		const isImAdmin = await isAdmin(participants, message.client.user.jid)
-		if (!isImAdmin) return await message.send(`⭐*SPKings*⭐\n\n_Ich bin kein Admin._`)
+		if (!isImAdmin) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Ich bin kein Admin._🙄`)
 		if (!match || isNaN(match))
 			return await message.GroupSettingsChange(message.jid, true)
 		await message.GroupSettingsChange(message.jid, true)
@@ -149,7 +149,7 @@ bot(
 	async (message, match) => {
 		const participants = await message.groupMetadata(message.jid)
 		const isImAdmin = await isAdmin(participants, message.client.user.jid)
-		if (!isImAdmin) return await message.send(`⭐*SPKings*⭐\n\n_Ich bin kein Admin._`)
+		if (!isImAdmin) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Ich bin kein Admin._🙄`)
 		return await message.GroupSettingsChange(message.jid, false)
 	}
 )
@@ -163,14 +163,14 @@ bot(
 	},
 	async (message, match) => {
 		match = match || message.reply_message.text
-		if (!match) return await message.send(`⭐*SPKings*⭐\n\n_Gib mir einen Gruppenlink._`)
+		if (!match) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Gib mir einen Gruppenlink._`)
 		const wa = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/
 		const [_, code] = match.match(wa) || []
-		if (!code) return await message.send(`⭐*SPKings*⭐\n\n_Gib mir einen Gruppenlink._`)
+		if (!code) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Gib mir einen Gruppenlink._`)
 		const res = await message.infoInvite(code)
-		if (res.size > 512) return await message.send('*Gruppe voll!*')
+		if (res.size > 512) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Gruppe voll!*\nVersuche es zu einem anderen Zeitpunkt wieder.')
 		await message.acceptInvite(code)
-		return await message.send(`_Gruppe beigetreten_`)
+		return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Gruppe beigetreten_`)
 	}
 )
 
@@ -185,7 +185,7 @@ bot(
 	async (message, match) => {
 		const participants = await message.groupMetadata(message.jid)
 		const im = await isAdmin(participants, message.client.user.jid)
-		if (!im) return await message.send(`⭐*SPKings*⭐\n\n_Ich bin kein Admin._`)
+		if (!im) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Ich bin kein Admin._🙄`)
 		await message.revokeInvite(message.jid)
 	}
 )
@@ -199,10 +199,10 @@ bot(
 	},
 	async (message, match) => {
 		match = match || message.reply_message.text
-		if (!match) return await message.send('⭐*SPKings*⭐\n\nBeispiel:\ninfo gruppenlink')
+		if (!match) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel:\ninfo [Gruppenlink]')
 		const linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
 		const [_, code] = match.match(linkRegex) || []
-		if (!code) return await message.send('⭐*SPKings*⭐\n\n_Gruppenlink ungültig_')
+		if (!code) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Gruppenlink ungültig_😥')
 		const res = await message.infoInvite(code)
 		const caption = `*Name :* ${res.subject}
 *Jid :* ${res.id}@g.us
@@ -241,7 +241,7 @@ bot(
 		}
 		if (Object.keys(metadata).length < 2) return await message.send(example)
 		const common = getCommon(Object.values(metadata), isAny)
-		if (!common.length) return await message.send(`⭐*SPKings*⭐\n\n_Null ähnliche Mitglieder_`)
+		if (!common.length) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Keine ähnliche Mitglieder_`)
 		if (kickFromAll) {
 			let gids = jids
 			if (!anySkip) gids = jids.filter((id) => !toSkip.includes(id))
@@ -266,8 +266,8 @@ bot(
 		if (kick) {
 			const participants = await message.groupMetadata(message.jid)
 			const im = await isAdmin(participants, message.client.user.jid)
-			if (!im) return await message.send(`⭐*SPKings*⭐\n\n_Ich bin kein Admin
-			._`)
+			if (!im) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Ich bin kein Admin
+			._🙄`)
 			return await message.Kick(common)
 		}
 		let msg = ''
