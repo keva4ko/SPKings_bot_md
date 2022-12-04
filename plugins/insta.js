@@ -9,10 +9,10 @@ bot(
 	},
 	async (message, match) => {
 		match = match || message.reply_message.text
-		if (!match) return await message.send('⭐     _*SPKings*_     ⭐\n\nBeispiel: insta Link')
+		if (!match) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel: insta [Link]')
 		const result = await instagram(match)
 		if (!result.length)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Nope, nix gefunden 🤷_', {
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Nope, nix gefunden 🤷_', {
 				quoted: message.quoted,
 			})
 		for (const url of result) {
