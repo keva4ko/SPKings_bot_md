@@ -4,7 +4,7 @@ bot(
 	{
 		pattern: 'antispam ?(.*)',
 		fromMe: true,
-		desc: 'TO remove backgroud of image',
+		desc: 'Spamschutz',
 		onlyGroup: true,
 		type: 'group',
 	},
@@ -15,11 +15,11 @@ bot(
 				await genButtonMessage(
 					[
 						{
-							text: enabled ? 'OFF' : 'ON',
+							text: enabled ? 'AUS' : 'AN',
 							id: `antispam ${enabled ? 'off' : 'on'}`,
 						},
 					],
-					'AntiSpam\nExample : antispam on/off'
+					'⭐️   _*Blvck Squad the Bot*_   ⭐️\n\nBeispiel:\nantispam on/off'
 				),
 				{},
 				'button'
@@ -27,7 +27,7 @@ bot(
 		}
 		await setSpam(message.jid, match == 'on')
 		await message.send(
-			`_AntiSpam ${match == 'on' ? 'activated' : 'deactivated.'}_`
+			`⭐️   _*Blvck Squad the Bot*_   ⭐️\n\n_AntiSpam wurde erfolgreich ${match == 'on' ? 'aktiviert.' : 'deakiviert.'}_`
 		)
 	}
 )
