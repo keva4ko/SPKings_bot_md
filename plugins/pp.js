@@ -4,16 +4,16 @@ bot(
 	{
 		pattern: 'fullpp ?(.*)',
 		fromMe: true,
-		desc: 'set full size profile picture',
+		desc: 'Setzt Profilbild vom Bot',
 		type: 'user',
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('*Reply to a image.*')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Markiere ein Bild.*')
 		await message.updateProfilePicture(
 			await message.reply_message.downloadMediaMessage(),
 			message.client.user.jid
 		)
-		return await message.send('_Profile Picture Updated_')
+		return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Profilbild vom Bot wurde aktualisiert!_')
 	}
 )
