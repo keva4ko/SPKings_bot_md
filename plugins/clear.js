@@ -9,6 +9,6 @@ bot(
 	},
 	async (message, match) => {
 		await message.clearChat(message.jid)
-		await message.send('⭐*SPKings*⭐\n_Chatverlauf\n_Chatverlauf gelöscht_')
+		await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Chatverlauf gelöscht_🫡')
 	}
 )
