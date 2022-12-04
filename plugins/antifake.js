@@ -10,7 +10,7 @@ bot(
 	{
 		pattern: 'antifake ?(.*)',
 		fromMe: true,
-		desc: 'Fakeaccounts setzen',
+		desc: 'Filter für Nummern',
 		type: 'group',
 		onlyGroup: true,
 	},
@@ -23,7 +23,7 @@ bot(
 					{ id: 'antifake list', text: 'LIST' },
 					{ id: `antifake ${onOrOff}`, text: onOrOff.toUpperCase() },
 				],
-				'⭐*SPKings*⭐\n\nBeispiel:\nhttps://github.com/lyfe00011/whatsapp-bot-md/wiki/antifake',
+				'⭐   _*Blvck Squad the Bot*_   ⭐\n\nKickfilter für unerlaubte Nummern\nBeispiel:\nantifake on/off\nantifake 1,993,46\nantifake !49,!43',
 				'Antifake'
 			)
 			return await message.send(button, {}, 'button')
@@ -55,13 +55,13 @@ bot(
 			})
 			return await message.send('```' + list + '```')
 		}
-		if (match == 'an' || match == 'aus') {
+		if (match == 'on' || match == 'off') {
 			await enableAntiFake(message.jid, match)
 			return await message.send(
-				`⭐     _*SPKings*_     ⭐\n\n_AntiFake ist ${match == 'an' ? 'an' : 'aus'}_😊`
+				`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_AntiFake ist ${match == 'on' ? 'an' : 'aus'}_😊`
 			)
 		}
 		await enableAntiFake(message.jid, match)
-		return await message.send('⭐     _*SPKiings*_     ⭐\n\n_Alles klar, wird gemacht!_🫡')
+		return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Alles klar, wird gemacht!_🫡')
 	}
 )
