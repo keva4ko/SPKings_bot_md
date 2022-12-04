@@ -11,7 +11,7 @@ bot(
 			)
 		if (!message.reply_message || !message.reply_message.image)
 			return await message.send(
-				'*Example : qr test*\n*Reply to a qr image.*'
+				'⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Beispiel: qr test*\n*Antworte auf einen Bild um QR zu erstellen.*'
 			)
 
 		const { bitmap } = await jimp.read(
