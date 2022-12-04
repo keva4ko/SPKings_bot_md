@@ -31,7 +31,7 @@ bot(
 			for (const item in type) msg += `*${item} :* ${type[item]}\n`
 			msg += `*Zuletzt gemeldet:* ${
 				secondsToHms((now - participants[participant].time) / 1000) || 0
-			} ago\n\n`
+			}`
 		}
 		await message.send(msg.trim())
 	}
@@ -49,15 +49,15 @@ bot(
 		const user = message.reply_message.jid || message.mention[0]
 		if (!user && match != 'all')
 			return await message.send(
-				'⭐     _*SPKings*_     ⭐\n\nBeispiel:\nreset all\nreset mention/markiere eine Person'
+				'⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel:\nreset all\nreset mention/markiere eine Person'
 			)
 		if (match == 'all') {
 			await resetMsgs(message.jid)
-			return await message.send('⭐     _*SPKings*_     ⭐\n\n_Nachrichtenzähler wird für jeden gelöscht._')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Nachrichtenzähler wird für jeden gelöscht._')
 		}
 		await resetMsgs(message.jid, user)
 		return await message.send(
-			`⭐     _*SPKings*_     ⭐\n\n@${jidToNum(user)} _Nachrichten gelöscht._`,
+			`⭐   _*Blvck Squad the Bot*_   ⭐\n\n@${jidToNum(user)} _Nachrichten gelöscht._`,
 			{ contextInfo: { mentionedJid: [user] } }
 		)
 	}
