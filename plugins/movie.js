@@ -12,7 +12,7 @@ bot(
 			`http://www.omdbapi.com/?apikey=742b2d09&t=${match}&plot=full`
 		)
 		if (movie.Response != 'True')
-			return await message.send('⭐     _*SPKings*_     ⭐\n\nNope, nix gefunden 🤷', {
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nNope, nix gefunden 🤷', {
 				quoted: message.data,
 			})
 		let msg = ''
