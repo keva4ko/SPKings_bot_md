@@ -9,10 +9,10 @@ bot(
 	},
 	async (message, match) => {
 		match = isUrl(match || message.reply_message.text)
-		if (!match) return await message.send('⭐*SPKings*⭐\n\nBeispiel:\nfb Link')
+		if (!match) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nLädt Videos aus Facebook herunter\nBeispiel:\nfb [Link]')
 		const result = await facebook(match)
 		if (!result.length)
-			return await message.send('⭐*SPKings*⭐\n\n_Nicht gefunden_', {
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Du führst mich zu nichts._😕', {
 				quoted: message.quoted,
 			})
 		return await message.send(
@@ -21,7 +21,7 @@ bot(
 					id: `upload ${e.url}`,
 					text: e.quality,
 				})),
-				'⭐*SPKings*⭐\n\nWähle die Videoqualität'
+				'⭐   _*Blvck Squad the Bot*_   ⭐\n\nWähle die Videoqualität'
 			),
 			{},
 			'button'
