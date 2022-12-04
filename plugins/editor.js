@@ -10,7 +10,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐*SPKings*⭐\n\nAntworte auf einen Bild.*')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Antworte auf einen Bild.*')
 		const { status, result } = await photoEditor(
 			await message.reply_message.downloadAndSaveMediaMessage(),
 			'skull'
@@ -28,7 +28,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐*SPKings*⭐\n\nAntworte auf einen Bild.*')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Antworte auf einen Bild.*')
 		const { status, result } = await photoEditor(
 			await message.reply_message.downloadAndSaveMediaMessage(),
 			'sketch'
@@ -47,7 +47,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐*SPKings*⭐\n\nMarkiere ein Bild.')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nMarkiere ein Bild.')
 		const { status, result } = await photoEditor(
 			await message.reply_message.downloadAndSaveMediaMessage(),
 			'pencil'
@@ -66,7 +66,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐*SPKings*⭐\n\nMarkiere ein Bild.')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nMarkiere ein Bild.')
 		const { status, result } = await photoEditor(
 			await message.reply_message.downloadAndSaveMediaMessage(),
 			'color'
@@ -85,7 +85,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐*SPKings*⭐\n\nMarkiere ein Bild.')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nMarkiere ein Bild.')
 		const { status, result } = await photoEditor(
 			await message.reply_message.downloadAndSaveMediaMessage(),
 			'kiss'
@@ -104,7 +104,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐*SPKings*⭐\n\nMarkiere ein Bild.')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nMarkiere ein Bild.')
 		const { status, result } = await photoEditor(
 			await message.reply_message.downloadAndSaveMediaMessage(),
 			'bokeh'
@@ -123,7 +123,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐*SPKings*⭐\n\nMarkiere ein Bild.')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nMarkiere ein Bild.')
 		const { status, result } = await photoEditor(
 			await message.reply_message.downloadAndSaveMediaMessage(),
 			'wanted'
@@ -142,7 +142,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐*SPKings*⭐\n\nMarkiere ein Bild.')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nMarkiere ein Bild.')
 		const { status, result } = await photoEditor(
 			await message.reply_message.downloadAndSaveMediaMessage(),
 			'look'
@@ -161,7 +161,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐*SPKings*⭐\n\nMarkiere ein Bild.')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nMarkiere ein Bild.')
 		const { status, result } = await photoEditor(
 			await message.reply_message.downloadAndSaveMediaMessage(),
 			'gandm'
@@ -180,7 +180,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐*SPKings*⭐\n\nMarkiere ein Bild.')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nMarkiere ein Bild.')
 		const { status, result } = await photoEditor(
 			await message.reply_message.downloadAndSaveMediaMessage(),
 			'dark'
@@ -199,7 +199,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐*SPKings*⭐\n\nMarkiere ein Bild.')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nMarkiere ein Bild.')
 		const { status, result } = await photoEditor(
 			await message.reply_message.downloadAndSaveMediaMessage(),
 			'makeup'
@@ -218,7 +218,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐*SPKings*⭐\n\nMarkiere ein Bild.')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nMarkiere ein Bild.')
 		const { status, result } = await photoEditor(
 			await message.reply_message.downloadAndSaveMediaMessage(),
 			'cartoon'
@@ -237,7 +237,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐*SPKings*⭐\n\nMarkiere ein Bild.')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nMarkiere ein Bild.')
 		const { status, result } = await photoEditor(
 			await message.reply_message.downloadAndSaveMediaMessage(),
 			'demon'
@@ -256,7 +256,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐*SPKings*⭐\n\nMarkiere ein Bild.')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nMarkiere ein Bild.')
 		const { status, result } = await photoEditor(
 			await message.reply_message.downloadAndSaveMediaMessage(),
 			'bloody'
@@ -275,7 +275,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐*SPKings*⭐\n\nMarkiere ein Bild.')
+			return await message.send('⭐️   _*Blvck Squad the Bot*_   ⭐\n\nMarkiere ein Bild.')
 		const { status, result } = await photoEditor(
 			await message.reply_message.downloadAndSaveMediaMessage(),
 			'zombie'
@@ -294,7 +294,7 @@ bot(
 	},
 	async (message, match) => {
 		if (!message.reply_message || !message.reply_message.image)
-			return await message.send('⭐*SPKings*⭐\n\nMarkiere ein Bild.')
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\nMarkiere ein Bild.')
 		const { status, result } = await photoEditor(
 			await message.reply_message.downloadAndSaveMediaMessage(),
 			'horned'
