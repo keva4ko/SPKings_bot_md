@@ -5,7 +5,7 @@ bot(
 	{
 		pattern: 'stop ?(.*)',
 		fromMe: fm,
-		desc: 'Delete filters in chat',
+		desc: 'Löscht Filter im chat',
 		type: 'group',
 		onlyGroup: true,
 	},
@@ -13,8 +13,8 @@ bot(
 		if (!match) return await message.send(`⭐*SPKings*⭐\n\nBeispiel:\nstop hi`)
 		const isDel = await deleteFilter(message.jid, match)
 		if (!isDel)
-			return await message.send(`⭐*SPKings*⭐\n\n_${match} nicht in Filter gefunden_`)
-		return await message.send(`⭐*SPKings*⭐\n\n_${match} gelöscht._`)
+			return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_${match} nicht in Filter gefunden_`)
+		return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_${match} gelöscht._`)
 	}
 )
 
@@ -22,7 +22,7 @@ bot(
 	{
 		pattern: 'filter ?(.*)',
 		fromMe: fm,
-		desc: 'filter in groups',
+		desc: 'Filter in Gruppen',
 		type: 'group',
 		onlyGroup: true,
 	},
@@ -32,7 +32,7 @@ bot(
 			const filters = await getFilter(message.jid)
 			if (!filters)
 				return await message.send(
-					`⭐*SPKings*⭐\n\n_Es wurde kein Filter gesetzt_\nBeispiel:\nfilter 'hi' 'hello'`
+					`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Es wurde kein Filter gesetzt_\nBeispiel:\nfilter 'hi' 'hello'`
 				)
 			let msg = ''
 			filters.map(({ pattern }) => {
@@ -41,7 +41,7 @@ bot(
 			return await message.send(msg.trim())
 		} else {
 			if (match.length < 2) {
-				return await message.send(`⭐*SPKings*⭐\n\nBeispiel:\nfilter 'hi' 'hello'`)
+				return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel:\nfilter 'hi' 'hello'`)
 			}
 			await setFilter(
 				message.jid,
@@ -50,7 +50,7 @@ bot(
 				match[0][0] === "'" ? true : false
 			)
 			await message.send(
-				`⭐*SPKings*⭐\n\n_${match[0].replace(/['"]+/g, '')}_ wurde im Filter hinzugefügt.`
+				`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_${match[0].replace(/['"]+/g, '')}_ wurde im Filter hinzugefügt.`
 			)
 		}
 	}
