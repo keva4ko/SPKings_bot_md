@@ -18,19 +18,19 @@ bot.addCommand(
 	async (message, match) => {
 		const date = new Date()
 		let CMD_HELP = `╭────────────────╮
-		⭐     _*SPKings*_     ⭐
+		⭐   _*Blvck Squad the Bot*_   ⭐
 ╰────────────────╯
 
 ╭────────────────
-│ Prefix : ${PREFIX}
-│ Nutzer : ${message.pushName}
-│ Uhrzeit : ${date.toLocaleTimeString()}
-│ Tag : ${date.toLocaleString('en', { weekday: 'long' })}
-│ Datum : ${date.toLocaleDateString('hi')}
-│ Version : ${VERSION}
-│ Plugins : ${PLUGINS.count}
-│ Ramauslastung : ${getRam()}
-│ Online seit : ${getUptime('t')}
+│ Prefix: ${PREFIX}
+│ Mitglied: ${message.pushName}
+│ Uhrzeit: ${date.toLocaleTimeString()}
+│ Tag: ${date.toLocaleString('en', { weekday: 'long' })}
+│ Datum: ${date.toLocaleDateString('hi')}
+│ Version: ${VERSION}
+│ Plugins: ${PLUGINS.count}
+│ Ramauslastung: ${getRam()}
+│ Online seit: ${getUptime('t')}
 ╰────────────────
 ╭────────────────
 `
@@ -94,17 +94,17 @@ bot.addCommand(
 
 		let msg =
 			'```' +
-			`╭═══ ⭐     _*SPKings*_     ⭐ ═══⊷
+			`╭═══ ⭐Blvck Squad the Bot⭐ ═══⊷
 ┃❃╭──────────────
-┃❃│ Prefix : ${PREFIX}
-┃❃│ Nutzer : ${message.pushName}
-┃❃│ Uhrzeit : ${date.toLocaleTimeString()}
-┃❃│ Tag : ${date.toLocaleString('en', { weekday: 'long' })}
-┃❃│ Datum : ${date.toLocaleDateString('hi')}
-┃❃│ Version : ${VERSION}
-┃❃│ Plugins : ${PLUGINS.count}
-┃❃│ Ramauslastung : ${getRam()}
-┃❃│ Online seit : ${getUptime('t')}
+┃❃│ Prefix: ${PREFIX}
+┃❃│ Mutglied: ${message.pushName}
+┃❃│ Uhrzeit: ${date.toLocaleTimeString()}
+┃❃│ Tag: ${date.toLocaleString('en', { weekday: 'long' })}
+┃❃│ Datum: ${date.toLocaleDateString('hi')}
+┃❃│ Version: ${VERSION}
+┃❃│ Installierte Plugins: ${PLUGINS.count}
+┃❃│ Ramauslastung: ${getRam()}
+┃❃│ Online seit: ${getUptime('t')}
 ┃❃╰───────────────
 ╰═════════════════⊷
 ` +
