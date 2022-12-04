@@ -5,13 +5,13 @@ bot(
 	{
 		pattern: 'trt ?(.*)',
 		fromMe: true,
-		desc: 'Google transalte',
+		desc: 'Google Übersetzer',
 		type: 'search',
 	},
 	async (message, match) => {
 		if (!message.reply_message.text)
 			return await message.send(
-				'*Reply to a text msg\n*_Example : trt ml_\ntrt ml hi'
+				'⭐   _*Blvck Squad the Bot*_   ⭐\n\n_*Markiere eine Nachricht*_\nBeispiele: trt ml_\ntrt ml hi'
 			)
 		const [to, from] = match.split(' ')
 		const msg = await trt(message.reply_message.text, to || config.LANG, from)
