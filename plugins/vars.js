@@ -7,15 +7,15 @@ if (config.VPS) {
 		{
 			pattern: 'getvar ?(.*)',
 			fromMe: true,
-			desc: 'Show var',
+			desc: 'ADMINISTRATION Zeigt Var',
 			type: 'vps',
 		},
 		async (message, match) => {
-			if (!match) return await message.send(`*Example : getvar sudo*`)
+			if (!match) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Beispiel:_\ngetvar sudo`)
 			const vars = getVars()
 			match = match.toUpperCase()
 			if (vars[match]) return await message.send(`${match} = ${vars[match]}`)
-			return await message.send(`_${match} not found in vars_`)
+			return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_${match} nicht in vars gefunden!_`)
 		}
 	)
 
@@ -23,17 +23,17 @@ if (config.VPS) {
 		{
 			pattern: 'delvar ?(.*)',
 			fromMe: true,
-			desc: 'delete var',
+			desc: 'ADMINISTRATION löscht var',
 			type: 'vps',
 		},
 		async (message, match) => {
-			if (!match) return await message.send(`*Example : delvar sudo*`)
+			if (!match) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Beispiel:_\ndelvar sudo`)
 			const vars = getVars()
 			match = match.toUpperCase()
 			if (!vars[match])
-				return await message.send(`_${match} not found in vars_`)
+				return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n__${match} nicht in vars gefunden!_`)
 			delVar(match)
-			await message.send(`_${match} deleted_`)
+			await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n__${match} wurde gelöscht!_`)
 			restartInstance()
 		}
 	)
@@ -42,15 +42,15 @@ if (config.VPS) {
 		{
 			pattern: 'setvar ?(.*)',
 			fromMe: true,
-			desc: 'set var',
+			desc: 'ADMINISTRATION setzt var',
 			type: 'vps',
 		},
 		async (message, match) => {
 			const keyValue = match.split('=')
 			if (!match || keyValue.length < 2)
-				return await message.send(`*Example : setvar sudo = 91987653210*`)
+				return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Beispiel:_\nsetvar sudo = 91987653210`)
 			setVars({ [keyValue[0].trim().toUpperCase()]: keyValue[1].trim() })
-			await message.send(`_new var ${keyValue[0].toUpperCase()} added_`)
+			await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Var ${keyValue[0].toUpperCase()} wurde hinzugefügt!_`)
 			restartInstance()
 		}
 	)
@@ -59,7 +59,7 @@ if (config.VPS) {
 		{
 			pattern: 'allvar ?(.*)',
 			fromMe: true,
-			desc: 'Show All var',
+			desc: 'ADMINISTRATION Zeigt alle Vars',
 			type: 'vps',
 		},
 		async (message, match) => {
