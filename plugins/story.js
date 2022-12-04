@@ -9,10 +9,10 @@ bot(
 	},
 	async (message, match) => {
 		match = match || message.reply_message.text
-		if (!match) return await message.send('_Example : story username_')
+		if (!match) return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n_Beispiel: story username_')
 		const result = await story(match)
 		if (!result.length)
-			return await message.send('*Not found*', {
+			return await message.send('⭐   _*Blvck Squad the Bot*_   ⭐\n\n*Finde nix*🤷🏻‍♂️', {
 				quoted: message.quoted,
 			})
 		for (const url of result) {
