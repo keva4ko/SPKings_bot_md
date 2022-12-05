@@ -10,7 +10,7 @@ bot(
 		onlyGroup: true,
 	},
 	async (message, match) => {
-		if (!match) return await message.send(`⭐*SPKings*⭐\n\nBeispiel:\nstop hi`)
+		if (!match) return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\nBeispiel:\nstop hi`)
 		const isDel = await deleteFilter(message.jid, match)
 		if (!isDel)
 			return await message.send(`⭐   _*Blvck Squad the Bot*_   ⭐\n\n_${match} nicht in Filter gefunden_`)
