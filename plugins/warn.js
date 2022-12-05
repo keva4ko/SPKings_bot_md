@@ -19,7 +19,7 @@ bot(
 	async (message, match) => {
 		if (!match && !message.reply_message)
 			return await message.send(
-				'⭐️   *_Black Squad the Bot_*   ⭐️\n\nWarnt Mitglieder bis sie gekickt werden.\n*Beispiele:*\nwarn [Markieren]\nwarn reset [Markieren]'
+				'╭═══⭐️*_Black Squad the Bot_*⭐️═══⊷\n╰════════════════════⊷\nWarnt Mitglieder bis sie gekickt werden.\n*Beispiele:*\nwarn [Markieren]\nwarn reset [Markieren]'
 			)
 		let [m, u] = match.split(' ')
 		if (m && m.toLowerCase() == 'reset') {
