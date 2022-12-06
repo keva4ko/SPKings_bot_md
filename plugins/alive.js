@@ -2,13 +2,13 @@ const { bot, aliveMessage } = require('../lib/')
 
 bot(
 	{
-		pattern: 'alive ?(.*)',
+		pattern: 'on ?(.*)',
 		fromMe: true,
-		desc: 'Nachricht bei Befehl',
+		desc: 'Onlinestatus',
 		type: 'misc',
 	},
 	async (message, match) => {
 		const { msg, options, type } = await aliveMessage(match, message)
-		return await message.send('⭐   _*Black Squad the Bot*_   ⭐\n\nSetzt Nachricht bei -alive\nBeispiel: alive [Text]')
+		return await message.send('⭐   _*Black Squad the Bot*_   ⭐\n\n   Alle Systeme *ONLINE*!✅')
 	}
 )
