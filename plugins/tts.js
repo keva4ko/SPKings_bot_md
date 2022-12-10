@@ -3,7 +3,7 @@ const config = require('../config')
 bot(
 	{
 		pattern: 'tts ?(.*)',
-		fromMe: true,
+		fromMe: false,
 		desc: 'Text zu Sprache',
 		type: 'misc',
 	},
